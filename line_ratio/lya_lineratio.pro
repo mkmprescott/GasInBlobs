@@ -131,13 +131,13 @@ keepA = (where((lyaSNA GT 2) AND (lyaA.ap GE 60) AND (lyaA.ap LE 100)))    ; kee
 
 ; PLOTTING
 ; Plotlineratio input values: slitname, aperture, signalratio1, ratioerror1, rationame1, signalratio2, ratioerror2, rationame2
-plotcivlya_oiicivMID = plotlineratio('MID', lyaMID(keep).ap, civlyaMID(keep), civlyaerrMID(keep), 'CIV-Lya', lyaheiiMID(keep), lyaheiierrMID(keep), 'Lya-HeII')
-plotcivlya_oiicivMID = plotlineratio('MID', oiiMID(keep).ap, oiicivMID(keep), oiiciverrMID(keep), 'OII-CIV', oiiheiiMID(keep), oiiheiierrMID(keep), 'OII-HeII')
-plotcivlya_oiicivMID = plotlineratio('MID', lyaMID(keep).ap, ciiicivMID(keep), ciiiciverrMID(keep), 'CIII-CIV', heiicivMID(keep), heiiciverrMID(keep), 'HeII-CIV')
+plotcivlya_lyaheiiMID = plotlineratio('MID', lyaMID(keep).ap, civlyaMID(keep), civlyaerrMID(keep), 'CIV-Lya', lyaheiiMID(keep), lyaheiierrMID(keep), 'Lya-HeII')
+plotoiiciv_oiiheiiMID = plotlineratio('MID', oiiMID(keep).ap, oiicivMID(keep), oiiciverrMID(keep), 'OII-CIV', oiiheiiMID(keep), oiiheiierrMID(keep), 'OII-HeII')
+plotciiiciv_heiicivMID = plotlineratio('MID', lyaMID(keep).ap, ciiicivMID(keep), ciiiciverrMID(keep), 'CIII-CIV', heiicivMID(keep), heiiciverrMID(keep), 'HeII-CIV')
 
-plotcivlya_oiicivMID = plotlineratio('A', lyaMID(keep).ap, civlyaMID(keep), civlyaerrMID(keep), 'CIV-Lya', lyaheiiMID(keep), lyaheiierrMID(keep), 'Lya-HeII')
-plotcivlya_oiicivMID = plotlineratio('A', oiiMID(keep).ap, oiicivMID(keep), oiiciverrMID(keep), 'OII-CIV', oiiheiiMID(keep), oiiheiierrMID(keep), 'OII-HeII')
-plotcivlya_oiicivMID = plotlineratio('A', lyaMID(keep).ap, ciiicivMID(keep), ciiiciverrMID(keep), 'CIII-CIV', heiicivMID(keep), heiiciverrMID(keep), 'HeII-CIV')
+plotcivlya_lyaheiiA = plotlineratio('A', lyaMID(keepA).ap, civlyaMID(keepA), civlyaerrMID(keepA), 'CIV-Lya', lyaheiiMID(keepA), lyaheiierrMID(keepA), 'Lya-HeII')
+plotoiiciv_oiiheiiA = plotlineratio('A', oiiMID(keepA).ap, oiicivMID(keepA), oiiciverrMID(keepA), 'OII-CIV', oiiheiiMID(keepA), oiiheiierrMID(keepA), 'OII-HeII')
+plotciiiciv_heiicivA = plotlineratio('A', lyaMID(keepA).ap, ciiicivMID(keepA), ciiiciverrMID(keepA), 'CIII-CIV', heiicivMID(keepA), heiiciverrMID(keepA), 'HeII-CIV')
 
 
 ; Forloops to print aperture numbers, line ratios, and line ratio errors to 2 txt files: MID and A data separately
