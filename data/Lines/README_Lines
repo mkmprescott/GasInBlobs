@@ -1,0 +1,27 @@
+Blue-side data stored in /blue
+Red-side data stored in /red
+
+Directories in each case:
+velo/ - measured nebula in 1 pixel apertures stepping across nebula
+velobin/ - measured nebula in 5 pixel apertures stepping across nebula
+wide/ - measured total flux from nebula in wider and wider apertures
+
+Line measured is given as one of the following: lya, heii, civ, ciii, neiv, nv, siiv, oii
+e.g., casdPRG1_A_B.skywide.oii.dat
+
+casd - prefix telling which data reduction steps have been applied (all of them in this case)
+PRG1 - name of nebula
+_A or _MID - slit being measured, where A is the 146deg slit and MID is the 52deg slit
+_B - means centered on the blob itself
+skywide / skyvelo / skyvelobin - the type of measurement (as above)
+combo - for the blue data only, I combined the data from both observing runs.  For the red data, I could only use the second run (after the upgrade) so it is not "combo"
+
+.fits and .dat file contain exactly the same information in FITS vs. ASCII format.
+
+In IDL, one would read in as:
+IDL> readcol, 'casdPRG1_A_B.skywide.oii.dat', AP, .... [all the field names here]
+or 
+IDL> oii = mrdfits('casdPRG1_A_B.skywide.oii.fits') ; reads the whole dataset into an IDL "structure" called oii, where each field is a "tag"
+IDL> help, oii, /str ; lists all the tags in the structure
+IDL> struct_print, oii ;prints out the structure, this is what is shown in the *.dat file.
+
